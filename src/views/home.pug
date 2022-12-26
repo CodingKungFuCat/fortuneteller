@@ -1,6 +1,13 @@
 extends base.pug
+include partials/mixins/video
 
 block content 
+    h3 고품격 점술상담을 받아보세요
+    ul
+        each content in contents  
+            +video(content)
+        else 
+            li 데이터를 받아올 수 없습니다.
     div 
     ul 
     h4 어떤 상담을 원하세요? 
