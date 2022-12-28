@@ -4,9 +4,17 @@ html(lang="ko")
         link(rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css")
         title fortuneteller
     body 
-       main 
+       main
         header 
         block content              
         h3 #{pageTitle} 상담 요금은 #{payMoney}입니다.
-            
-                include partials/footer.pug
+        form(method="POST")
+            span 상담 내용은 운영자만 볼 수 있으며 자세한 질문을 해야 정확한 상담 가능합니다.
+            input(name="title", placeholder="상담제목을 입력하세요", required)
+            input(name="content", placeholder="상담내용을 입력하세요", required)
+            input(value="상담요청", type="submit")
+            br
+            span #{title}
+            br
+            span #{content}
+        include partials/footer.pug
